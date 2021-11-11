@@ -1,14 +1,11 @@
 import React from "react";
 import TransactionTable from "./components/TransactionTable";
-// import AppContext from "./context/AppContex";
-// import useInitialState from "../hooks/useInitialState";
 import 'h8k-components';
 
 
 import "./App.css";
 
 const title = 'HackerBank';
-// const initialState = useInitialState()
 
 
 function App() {
@@ -59,10 +56,8 @@ function App() {
   return (
     <div className="container-fluid">
       <h8k-navbar header={title} />
-			{/* <AppContext.Provider value={initialState}> */}
 
       <TransactionTable txns={txns}></TransactionTable>
-			{/* </AppContext.Provider> */}
     </div>
   );
 }

@@ -10,7 +10,7 @@ function TransactionTable({txns}) {
 		setstate(event.target.value)
 	};
 	const sort = ()=>{
-		let arg = sorted
+		let arg = [...sorted]
 		setsorted(arg.sort((a,b)=>a.amount-b.amount))		
 
 	}
