@@ -3,23 +3,19 @@ import { useState} from "react";
 // import AppContext from "../context/AppContex";
 
 function TransactionTable({txns}) {
-	const [state, setstate] = useState("2019-11-29")
+	const [state, setstate] = useState("AAAA-MM-DD")
 	const [sorted, setsorted] = useState(txns)
 	// const {state,setstate} = React.useContext(AppContext)	
   const datesAllign = (event) => {
 		setstate(event.target.value)
-		console.log(state)
 	};
 	const sort = ()=>{
-		txns.sort((a,b)=>a.amount-b.amount)
-		setsorted(txns)		
-		console.log(sorted)
+		let arg = sorted
+		setsorted(arg.sort((a,b)=>a.amount-b.amount))		
 
 	}
 	const handleClick =()=>{
-		txns=txns.filter(tn=>tn.date===state)
-		setsorted(txns)
-		console.log(txns)
+		setsorted(txns.filter(tn=>tn.date===state))
 	}
 
 
@@ -32,7 +28,7 @@ function TransactionTable({txns}) {
       </section>
 
       <div className="card mt-50">
-          <table className="table">
+          <table className="table" >
               <thead>
               <tr className="table">
                   <th className="table-header">Date</th>
